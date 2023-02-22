@@ -8,7 +8,9 @@ export const TablePage = ({dispatch}) => {
     },[])
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-neutral-900 to-neutral-700">
+
         <Table/> 
+        
     </div>
   )
 }
