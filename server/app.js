@@ -8,6 +8,6 @@ const app = express()
 
 app.use(express.json())
 app.use(routesStudents)
-//app.use(express.static(join(__dirname,'../client/build')))
+app.use(express.static(join(__dirname,'../client/build')))
 
 export default app
