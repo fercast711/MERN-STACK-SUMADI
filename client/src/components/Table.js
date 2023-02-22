@@ -3,10 +3,10 @@ import {useSelector} from 'react-redux'
 const Table = () => {
     const {student} = useSelector(state=> state.student)
     console.log(student)
-    const style_1 = "border-double border-4 border-gray-500 p-2 "
-    const style_2 = "border-double border-4 border-gray-500 p-2 w-1/5"
+    const style_1 = "border-double border-4 border-gray-500 p-2 md:p-0  "
+    const style_2 = "border-double border-4 border-gray-500 p-2 md:p-0 w-1/5 sm:w-0 "
   return (
-    <div className="w-3/4 md:px-2  md:container md:m-auto">
+    <div className="w-3/4 md:px-2  md:container md:m-auto flex justify-center">
     <table className="border-double border-4 border-gray-500  text-gray-400 bg-neutral-800 md:text-xs">
         <tr>
             <th className={style_1}>Student Name</th>
