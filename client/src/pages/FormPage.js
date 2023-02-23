@@ -6,9 +6,13 @@ import {useNavigate} from 'react-router-dom'
 export const FormPage = ({dispatch}) => {
     const navigate = useNavigate()
   return (
-    <div className="bg-neutral-900 min-h-screen flex items-center justify-center">
-        <div className=" md:px-10 md:container md:m-auto w-2/5">
+    <div className="bg-neutral-900 min-h-screen flex items-center justify-center flex-col gap-y-2">
+        <header>
+                    <h1 className="text-3xl md:text-xl text-gray-100">Add Student</h1>
+            </header>
+        <div className=" md:px-10 md:container w-2/5">
             <div className="bg-zinc-800 p-10 shadow-md shadow-black ">
+                
                 <Formik
                 initialValues={{
                     FirstName: "",
