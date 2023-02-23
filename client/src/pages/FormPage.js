@@ -6,6 +6,7 @@ import {useNavigate} from 'react-router-dom'
 export const FormPage = ({dispatch}) => {
     const navigate = useNavigate()
   return (
+    
     <div className="bg-neutral-900 min-h-screen flex items-center justify-center flex-col gap-y-2">
         <header>
                     <h1 className="text-3xl md:text-xl text-gray-100">Add Student</h1>
@@ -53,10 +54,10 @@ export const FormPage = ({dispatch}) => {
                 enableReinitialize
                 onSubmit={(values, actions)=>{
                     dispatch(fetchInsertStudent(values))
-                    navigate('/')
+                    navigate('/studentList')
                     actions.resetForm()
                 }}>
-                    {({handleSubmit, setFieldValue, resetForm})=>(
+                    {({handleSubmit, setFieldValue, resetForm, dirty,isValid, isSubmitting})=>(
                         <Form onSubmit={handleSubmit}>
                             <label htmlFor="FirstName" className="text-white">
                             First Name</label>
@@ -112,9 +113,11 @@ export const FormPage = ({dispatch}) => {
                             <ErrorMessage name="Gender" component="p" className="text-red-400 text-sm"/>
                             
                             <div className="flex gap-x-2">
-                                <button className="bg-indigo-600 hover:bg-indigo-500 px-4 py-2 rounded 
-                                mt-2 text-white focus:outline-none disabled:bg-indigo-400"
-                                type="submit">Submit</button>
+                                <button 
+                                className="bg-indigo-600 hover:bg-indigo-500 px-4 py-2 rounded 
+                                mt-2 text-white focus:outline-noneS disabled:bg-indigo-400"
+                                type="submit"
+                                disabled={!(isValid && dirty) || isSubmitting}>Submit</button>
                                 <button className="bg-red-600 hover:bg-red-500 px-4 py-2 rounded 
                                 mt-2 text-white focus:outline-none disabled:bg-red-400"
                                 onClick={resetForm}>Cancel</button>

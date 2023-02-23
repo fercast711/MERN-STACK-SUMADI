@@ -9,8 +9,8 @@ function App() {
     <div className="App">
       <NavBar/>
       <Routes>
-        <Route path="/" element={<TablePage dispatch={dispatch}/>}/>
-        <Route path="/addStudent" element={<FormPage dispatch={dispatch}/>}/>
+        <Route path="/studentList" element={<TablePage dispatch={dispatch}/>}/>
+        <Route path="/" element={<FormPage dispatch={dispatch}/>}/>
         <Route path="*" element={<NotFound/>}/>
       </Routes>
     </div>
