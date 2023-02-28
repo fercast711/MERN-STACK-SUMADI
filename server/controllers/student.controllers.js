@@ -1,11 +1,15 @@
+import createHttpError from "http-errors";
 import Students from "../models/Students.js";
 
-export const getStudents = async(req,res)=>{
+export const getStudents = async(req,res, next)=>{
     try {
         const students = await Students.find()
+        if(!students){
+            throw createHttpError(404, "Not Found");
+        }
         res.json(students)
     } catch (error) {
-        return res.status(500).json({message: error.message})
+        next(error);
     }
 }
 
@@ -15,6 +19,6 @@ export const addStudents = async(req,res)=>{
         await newStudent.save()
         return res.json(newStudent)
     } catch (error) {
-        return res.status(500).json({message: error.message})
+        next(error)
     }
 }
