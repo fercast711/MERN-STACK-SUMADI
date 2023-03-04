@@ -13,8 +13,12 @@ export const getStudents = async(req,res, next)=>{
     }
 }
 
-export const addStudents = async(req,res)=>{
+export const addStudents = async(req,res, next)=>{
+    const {FirstName} = req.body;
     try {
+        if(!FirstName){
+            throw createHttpError(400, "The form must have a body")
+        }
         const newStudent = new Students(req.body)
         await newStudent.save()
         return res.json(newStudent)

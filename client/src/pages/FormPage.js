@@ -4,7 +4,8 @@ import { fetchInsertStudent } from "../store/slice/sliceStudents";
 import {useNavigate} from 'react-router-dom'
 
 export const FormPage = ({dispatch}) => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const styleInput = "px-3 py-2 focus:outline-none rounded bg-slate-600 text-white w-full mb-4"
   return (
     
     <div className="bg-neutral-900 min-h-screen flex items-center justify-center flex-col gap-y-2">
@@ -63,32 +64,28 @@ export const FormPage = ({dispatch}) => {
                             First Name</label>
                             <Field name='FirstName'
                             placeholder='Your Name' 
-                            className='px-3 py-2 focus:outline-none rounded bg-slate-600
-                            text-white w-full mb-4'/>
+                            className={styleInput}/>
                             <ErrorMessage name="FirstName" component="p" className="text-red-400 text-sm"/>
 
                             <label htmlFor="LastName" className="text-white">
                             Last Name</label>
                             <Field name='LastName'
                             placeholder='Your Name' 
-                            className='px-3 py-2 focus:outline-none rounded bg-slate-600
-                            text-white w-full mb-4'/> 
+                            className={styleInput}/> 
                             <ErrorMessage name="LastName" component="p" className="text-red-400 text-sm"/>
 
                             <label htmlFor="DateBirth" className="text-white">
                             Date of Birth</label>
                             <Field name='DateBirth'
                             type="date"
-                            className='px-3 py-2 focus:outline-none rounded bg-slate-600
-                            text-white w-full mb-4'/>
+                            className={styleInput}/>
                             <ErrorMessage name="DateBirth" component="p" className="text-red-400 text-sm"/>
 
                             <label htmlFor="Email" className="text-white">
                             Email</label>
                             <Field name='Email'
                             placeholder='emailexample@test.com' 
-                            className='px-3 py-2 focus:outline-none rounded bg-slate-600
-                            text-white w-full mb-4'/>
+                            className={styleInput}/>
                             <ErrorMessage name="Email" component="p" className="text-red-400 text-sm"/>
 
                             <label htmlFor="Address" className="text-white">
@@ -96,8 +93,7 @@ export const FormPage = ({dispatch}) => {
                             <Field name='Address'
                             placeholder='' 
                             component="textarea"
-                            className='px-3 py-2 focus:outline-none rounded bg-slate-600
-                            text-white w-full mb-4' onChange={(e)=>setFieldValue('Address', e.target.value)}/>
+                            className={styleInput} onChange={(e)=>setFieldValue('Address', e.target.value)}/>
                             <ErrorMessage name="Address" component="p" className="text-red-400 text-sm"/>
 
                             <div role="group" aria-labelledby="my-radio-group" className="flex gap-5">
