@@ -14,10 +14,10 @@ export const getStudents = async(req,res, next)=>{
 }
 
 export const addStudents = async(req,res, next)=>{
-    const {FirstName} = req.body;
+    const {FirstName, LastName, DateBirth, Email, Address, Gender} = req.body;
     try {
-        if(!FirstName){
-            throw createHttpError(400, "The form must have a body")
+        if(!(FirstName, LastName, DateBirth, Email, Address, Gender)){
+            throw createHttpError(400, "The form must have a body completely");
         }
         const newStudent = new Students(req.body)
         await newStudent.save()

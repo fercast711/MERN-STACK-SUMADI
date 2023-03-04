@@ -3,16 +3,13 @@ import { useLocation } from "react-router-dom"
 
 const NavBar = () => {
     const location = useLocation()
-    const disable = "bg-slate-200 hover:bg-slate-300"
-    const active = "bg-teal-200 hover:bg-teal-300"
-    let styleList = ""
-    let styleAdd = ""
-    if(location.pathname == "/studentList"){
+    const disable = "bg-slate-200 hover:bg-slate-300 px-2 py-1 text-xs"
+    const active = "bg-teal-200 hover:bg-teal-300 px-2 py-1 text-xs"
+    let styleList = disable
+    let styleAdd = active
+    if(location.pathname === "/studentList"){
         styleList = active
         styleAdd = disable
-    }else{
-        styleList = disable
-        styleAdd = active
     }
   return (
     <div className="bg-neutral-800 flex justify-between px-20 sm:px-2 py-2  w-screen fixed shadow-md shadow-black">
@@ -22,10 +19,10 @@ const NavBar = () => {
         
         <ul className="flex gap-x-1">
             <li>
-                <Link to="/" className={`${styleAdd} px-2 py-1 text-xs`}>Add Students</Link>
+                <Link to="/" className={styleAdd}>Add Students</Link>
             </li>
             <li>
-                <Link to="/studentList" className={`${styleList} px-2 py-1 text-xs`}>Students List</Link>
+                <Link to="/studentList" className={styleList}>Students List</Link>
             </li>
         </ul>
     </div>
