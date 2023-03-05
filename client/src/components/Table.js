@@ -2,28 +2,29 @@ import {useSelector} from 'react-redux'
 
 const Table = () => {
     const {student} = useSelector(state=> state.student)
-    const style_th = "border-double border-4 border-gray-500 p-2 md:p-0  "
-    const style_td = "border-double border-4 border-gray-500 p-2 md:p-0 w-1/5 sm:w-0 "
+    const style_tr = "border-b border-gray-500"
+    const style_col = "py-5 px-4  sm:p-2  w-1/5"
   return (
-    <div className="w-3/4 md:px-2  md:container flex justify-center">
-    <table className="border-double border-4 border-gray-500  text-gray-400  md:text-xs">
-      <thead className='bg-neutral-900  text-gray-300'>
-        <tr>
-            <th className={style_th}>Student Name</th>
-            <th className={style_th}>Date of Birth</th>
-            <th className={style_th}>Email</th>
-            <th className={style_th}>Address</th>
-            <th className={style_th}>Gender</th>
+    <div className="w-4/5 relative flex justify-center ">
+    <table className="  text-gray-400 overflow-x-auto md:text-xs shadow-md shadow-black">
+      <thead className='bg-neutral-800 text-gray-300 text-left'>
+        <tr className={style_tr }>
+            <th className={style_col}>Student Name</th>
+            <th className={style_col}>Date of Birth</th>
+            <th className={style_col}>Email</th>
+            <th className={style_col}>Address</th>
+            <th className={style_col}>Gender</th>
+
         </tr>
       </thead>
       <tbody className='bg-neutral-800'>
       {student.map(item =>(
-          <tr>
-            <td className={style_td}>{item.FirstName +" "+item.LastName}</td>
-            <td className={style_td}>{item.DateBirth}</td>
-            <td className={style_td}>{item.Email}</td>
-            <td className={style_td}>{item.Address}</td>
-            <td className={style_td}>{item.Gender}</td> 
+          <tr className={style_tr}>
+            <th className={`text-gray-300 text-left ${style_col}`}>{item.FirstName +" "+item.LastName}</th>
+            <td className={style_col}>{item.DateBirth}</td>
+            <td className={style_col}>{item.Email}</td>
+            <td className={style_col}>{item.Address}</td>
+            <td className={style_col}>{item.Gender}</td> 
           </tr>
         ))}
       </tbody>
