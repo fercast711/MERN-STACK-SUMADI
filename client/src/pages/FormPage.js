@@ -9,10 +9,10 @@ export const FormPage = ({dispatch}) => {
   return (
     
     <div className="bg-neutral-900 min-h-screen flex items-center justify-center flex-col gap-y-2">
-        <header>
+        <header className="mt-14">
                     <h1 className="text-3xl md:text-xl text-gray-100">Add Student</h1>
             </header>
-        <div className=" md:px-10 md:container w-2/5">
+        <div className=" md:px-10 lg:container w-2/5 max-w-xl mb-5">
             <div className="bg-zinc-800 p-10 shadow-md shadow-black ">
                 
                 <Formik

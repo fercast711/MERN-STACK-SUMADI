@@ -7,8 +7,8 @@ export const TablePage = ({dispatch}) => {
       dispatch(fetchGetStudent())
     },[])
   return (
-    <div className="min-h-screen flex-col flex items-center justify-center gap-y-4 bg-gradient-to-r from-neutral-900 to-neutral-700">
-        <h1 className="md:text-xl text-3xl text-gray-100">Student List</h1>
+    <div className="min-h-screen flex-col flex items-center gap-y-4 bg-gradient-to-r from-neutral-900 to-neutral-700">
+        <h1 className="md:text-xl text-3xl text-gray-100 mt-20">Student List</h1>
         <Table/> 
         
     </div>
