@@ -3,9 +3,9 @@ import {useSelector} from 'react-redux'
 const Table = () => {
     const {student} = useSelector(state=> state.student)
     const style_tr = "border-b border-gray-500"
-    const style_col = "py-5 px-4  sm:p-2  w-1/5"
+    const style_col = "py-5 px-4  sm:px-1 sm:py-0 w-1/5"
   return (
-    <div className="w-4/5  flex justify-center mb-9">
+    <div className="w-4/5 flex justify-center mb-9">
     <table className="  text-gray-400 overflow-x-auto max-w-4xl md:text-xs ">
       <thead className='bg-neutral-800 text-gray-300 text-left'>
         <tr className={style_tr }>
